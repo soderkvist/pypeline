@@ -27,10 +27,8 @@ def execute_order_sixty_six():
 
 @app.route('/payload', methods=['POST'])
 def payload():
-    if True: # verify_signature(request):
+    if verify_signature(request):
         execute_order_sixty_six()
-
         return 'Successfully', 200
+
     return 'Forbidden', 403
-
-
